@@ -1,3 +1,11 @@
+---
+title: Diabete Risk Predictor
+emoji: 🩺
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
 # Intelligent Backend — Diabetes Risk Predictor
 
 Une application full-stack intelligente (FastAPI + Streamlit) combinant trois couches d'Intelligence Artificielle pour analyser le risque de diabète chez un patient. Ce projet a été développé en respectant la méthodologie **CRISP-DM**.

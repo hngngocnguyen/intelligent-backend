@@ -413,8 +413,11 @@ def init_session_defaults(default_url: str) -> None:
 
 def reset_demo_state(default_url: str) -> None:
     defaults = build_default_state(default_url)
+    # Keys bound to widgets that should not be modified after instantiation
+    skip_keys = ["backend_url", "tabular_model_version", "show_latency"]
     for key, value in defaults.items():
-        st.session_state[key] = value
+        if key not in skip_keys:
+            st.session_state[key] = value
 
 
 def render_sidebar(client: ApiClient, default_url: str) -> None:
