@@ -32,7 +32,7 @@ class HuggingFaceArtifact:
 
 
 class HuggingFaceSymptomService:
-    def __init__(self, model_name: str = "MoritzLaurer/deberta-v3-large-zeroshot-v2.0") -> None:
+    def __init__(self, model_name: str = "typeform/distilbert-base-uncased-mnli") -> None:
         self.model_name = model_name
         self._pipeline = None
         self._pipeline_attempted = False

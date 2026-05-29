@@ -18,7 +18,7 @@ Ce projet ne se limite pas à un simple modèle de classification. Il intègre u
    - Entraîné sur le dataset Pima Indians Diabetes.
    - Fournit une prédiction de risque ultra-rapide (< 15ms) basée sur les données cliniques (Glucose, BMI, Age, etc.).
 2. **Couche NLP Zero-Shot (HuggingFace)** :
-   - Utilise le modèle open-source `MoritzLaurer/deberta-v3-large-zeroshot-v2.0`.
+   - Utilise le modèle open-source `typeform/distilbert-base-uncased-mnli` (version allégée et rapide).
    - Analyse les textes et plaintes du patient pour en extraire des catégories de symptômes.
 3. **Couche Générative LLM (OpenRouter)** :
    - Interroge un modèle LLM gratuit (`:free`) avec failover (ex: `openai/gpt-oss-20b:free`, `mistralai/mistral-7b-instruct:free`).
