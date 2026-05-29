@@ -57,7 +57,7 @@ class OpenRouterExplanationService:
         )
         self.api_key = (api_key or os.getenv("OPENROUTER_API_KEY", "")).strip()
         self.base_url = base_url
-        self.max_retries = max_retries
+        self.max_retries = 0
         self.retry_delay = retry_delay
 
     def model_info(self) -> dict[str, Any]:
@@ -151,7 +151,7 @@ class OpenRouterExplanationService:
                         self.base_url,
                         headers=headers,
                         json={"model": model_name, **body_template},
-                        timeout=30,
+                        timeout=60,
                     )
                     if response.ok:
                         data = response.json()
