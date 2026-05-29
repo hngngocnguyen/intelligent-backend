@@ -1,0 +1,47 @@
+{
+  "patient_input": {
+    "glucose": 148,
+    "blood_pressure": 72,
+    "skin_thickness": 35,
+    "insulin": 0,
+    "bmi": 33.6,
+    "diabetes_pedigree_function": 0.627,
+    "age": 50,
+    "pregnancies": 1,
+    "symptoms_text": "I feel very thirsty all the time, I urinate frequently, I am always tired and my vision is getting blurry."
+  },
+  "results": {
+    "classic_model": {
+      "probability": 0.78,
+      "prediction": "Diabetique",
+      "model_version": "mlp_v3"
+    },
+    "huggingface": {
+      "top_category": "diabetes symptoms",
+      "confidence": 0.87,
+      "model": "MoritzLaurer/deberta-v3-large-zeroshot-v2.0"
+    },
+    "llm": {
+      "report": {
+        "risk_level": "high",
+        "summary": "The patient exhibits classic hyperglycemic symptoms\u2014persistent thirst, frequent urination, fatigue, and blurry vision\u2014alongside a fasting glucose of 148 mg/dL and a BMI of 33.6, indicating obesity. The MLP risk score of 78% further confirms a high probability of undiagnosed diabetes or pre\u2011diabetes. Immediate evaluation and management are essential to prevent acute complications and long\u2011term organ damage.",
+        "key_risk_factors": [
+          "elevated fasting glucose (148 mg/dL)",
+          "obesity (BMI 33.6)",
+          "polyuria, polydipsia, fatigue, blurry vision"
+        ],
+        "recommendations": [
+          "Obtain an HbA1c test and repeat fasting glucose to confirm diagnosis",
+          "Refer to an endocrinologist for comprehensive diabetes management",
+          "Initiate lifestyle modifications: diet plan, weight\u2011loss program, and regular physical activity",
+          "Educate on monitoring blood glucose, recognizing hypoglycemia, and proper foot care",
+          "Schedule follow\u2011up within 2 weeks to review results and adjust treatment"
+        ],
+        "urgency": "immediate"
+      },
+      "model_used": "openai/gpt-oss-20b:free",
+      "latency_ms": 21325,
+      "prompt_version": "v3_chain_of_thought"
+    }
+  }
+}

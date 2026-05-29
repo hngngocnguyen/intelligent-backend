@@ -1,0 +1,4 @@
+Version,Succes API,Latence (ms),Longueur reponse,JSON parse,Tokens prompt,Tokens completion
+v1 - Simple,Non,618,0,N/A,?,?
+v2 - JSON Structure,Non,401,0,Non,?,?
+v3 - Chain-of-Thought,Non,390,0,Non,?,?

@@ -1,0 +1,4 @@
+Modele,Threshold,Accuracy,Precision,Recall,F1,AUC-ROC
+MLP v1 Baseline,0.47,0.7759,0.6744,0.7073,0.6905,0.8585
+MLP v2 BN+Dropout,0.37,0.7931,0.6604,0.8537,0.7447,0.8673
+MLP v3 Feature Eng.,0.41,0.7586,0.6226,0.8049,0.7021,0.8641

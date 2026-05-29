@@ -1,0 +1,25 @@
+model,case_id,top_label,confidence,score_diabetes
+facebook/bart-large-mnli,diabetic_1,fatigue and general weakness,0.5816,0.0374
+facebook/bart-large-mnli,diabetic_2,fatigue and general weakness,0.5046,0.3599
+facebook/bart-large-mnli,diabetic_3,fatigue and general weakness,0.954,0.0044
+facebook/bart-large-mnli,hypertension_1,cardiovascular symptoms,0.5655,0.0007
+facebook/bart-large-mnli,cardio_1,cardiovascular symptoms,0.903,0.0012
+facebook/bart-large-mnli,neuro_1,neurological symptoms,0.6526,0.002
+facebook/bart-large-mnli,digestive_1,digestive symptoms,0.9894,0.0024
+facebook/bart-large-mnli,fatigue_1,fatigue and general weakness,0.8567,0.0182
+facebook/bart-large-mnli,healthy_1,no significant symptoms,0.9979,0.0003
+facebook/bart-large-mnli,diabetic_4,fatigue and general weakness,0.9355,0.0059
+facebook/bart-large-mnli,cardio_2,cardiovascular symptoms,0.9474,0.0016
+facebook/bart-large-mnli,diabetic_5,neurological symptoms,0.4267,0.0247
+typeform/distilbert-base-uncased-mnli,diabetic_1,digestive symptoms,0.5737,0.0497
+typeform/distilbert-base-uncased-mnli,diabetic_2,digestive symptoms,0.3955,0.1746
+typeform/distilbert-base-uncased-mnli,diabetic_3,fatigue and general weakness,0.9956,0.0006
+typeform/distilbert-base-uncased-mnli,hypertension_1,cardiovascular symptoms,0.92,0.0018
+typeform/distilbert-base-uncased-mnli,cardio_1,cardiovascular symptoms,0.9284,0.0052
+typeform/distilbert-base-uncased-mnli,neuro_1,fatigue and general weakness,0.8463,0.0064
+typeform/distilbert-base-uncased-mnli,digestive_1,fatigue and general weakness,0.8652,0.0011
+typeform/distilbert-base-uncased-mnli,fatigue_1,fatigue and general weakness,0.2644,0.0805
+typeform/distilbert-base-uncased-mnli,healthy_1,no significant symptoms,0.9967,0.0003
+typeform/distilbert-base-uncased-mnli,diabetic_4,neurological symptoms,0.608,0.003
+typeform/distilbert-base-uncased-mnli,cardio_2,cardiovascular symptoms,0.8158,0.0003
+typeform/distilbert-base-uncased-mnli,diabetic_5,neurological symptoms,0.3608,0.0789

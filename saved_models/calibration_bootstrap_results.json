@@ -1,0 +1,26 @@
+{
+  "brier_before": 0.15653759637911424,
+  "brier_after": 0.16014228275234563,
+  "calibration_plot": "d:\\Education\\M2 - IA - NEXA\\S2\\05. Introduction aux mod\u00e8les IA g\u00e9n\u00e9ratives - TRONC\\intelligent-backend\\saved_models\\calibration_plot.png",
+  "bootstrap_n": 1000,
+  "f1_before_stats": {
+    "mean": 0.6974573272162408,
+    "2.5%": 0.5881361533377396,
+    "97.5%": 0.7956989247311828
+  },
+  "f1_after_stats": {
+    "mean": 0.6676912764502995,
+    "2.5%": 0.5454545454545454,
+    "97.5%": 0.7733749999999999
+  },
+  "auc_before_stats": {
+    "mean": 0.8490829751349783,
+    "2.5%": 0.7715008802816902,
+    "97.5%": 0.9182459642096265
+  },
+  "auc_after_stats": {
+    "mean": 0.8312728968082961,
+    "2.5%": 0.7517698032164619,
+    "97.5%": 0.9047187098844673
+  }
+}

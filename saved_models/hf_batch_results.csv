@@ -1,0 +1,13 @@
+case_id,text,top_label,final_label,is_ambiguous,confidence,score_diabetes,diabetes_rank
+diabetic_1,Patient reports excessive thirst and urinating every ho...,diabetes symptoms,diabetes symptoms,False,0.8839,0.8839,1
+diabetic_2,"My glucose is always high, I feel weak and lose weight ...",diabetes symptoms,diabetes symptoms,False,0.998,0.998,1
+diabetic_3,"I have been thirsty, tired, and my foot has a sore that...",diabetes symptoms,diabetes symptoms,False,0.7793,0.7793,1
+hypertension_1,"High blood pressure, pounding headaches, and chest tigh...",high blood pressure and hypertension,high blood pressure and hypertension / heart rhythm and cardiovascular symptoms,True,0.9663,0.0009,4
+cardio_1,My heart beats irregularly and I get shortness of breat...,heart rhythm and cardiovascular symptoms,heart rhythm and cardiovascular symptoms,False,0.9963,0.0001,6
+neuro_1,I feel numb in my left arm and have frequent migraines....,neurological symptoms unrelated to blood pressure,neurological symptoms unrelated to blood pressure,False,0.9848,0.0008,3
+digestive_1,"Stomach cramps, bloating, and nausea every time I eat....",digestive symptoms,digestive symptoms,False,0.9998,0.0005,3
+fatigue_1,I am always exhausted even after sleeping 10 hours....,fatigue and general weakness,fatigue and general weakness,False,0.997,0.0019,5
+healthy_1,"Completely healthy, no issues whatsoever....",no significant symptoms,no significant symptoms,False,0.9955,0.0002,5
+diabetic_4,"Blurry vision, excessive thirst, and slow-healing cuts ...",neurological symptoms unrelated to blood pressure,diabetes symptoms,False,0.7379,0.4421,2
+cardio_2,"Recurring dizziness, sweating, and heart palpitations a...",heart rhythm and cardiovascular symptoms,heart rhythm and cardiovascular symptoms,False,0.9668,0.0002,5
+diabetic_5,"I feel a tingling in my feet, very thirsty, and gained ...",diabetes symptoms,diabetes symptoms,False,0.9608,0.9608,1
