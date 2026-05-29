@@ -48,6 +48,7 @@ class HuggingFaceSymptomService:
             self._pipeline = pipeline(
                 "zero-shot-classification",
                 model=self.model_name,
+                framework="tf",
             )
         except Exception as exc:  # pragma: no cover
             logger.warning(
