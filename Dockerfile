@@ -20,4 +20,4 @@ COPY --chown=user:user . /app
 # HF Spaces run on port 7860
 EXPOSE 7860
 
-CMD ["supervisord", "-c", "supervisord.conf"]
+CMD ["bash", "run.sh"]
