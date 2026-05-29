@@ -22,7 +22,7 @@ class ApiClient:
             method,
             f"{self.base_url}{path}",
             json=payload,
-            timeout=60,
+            timeout=300,
         )
         response.raise_for_status()
         return response.json()
