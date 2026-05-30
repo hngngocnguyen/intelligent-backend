@@ -36,7 +36,19 @@ Pour faciliter la lecture du projet, voici où trouver les éléments clés :
 - **API & Logique Métier (Backend)** : Le serveur FastAPI se trouve dans `backend/main.py` et les différents modèles IA sont gérés dans `backend/models/` (`classic_model.py`, `hf_model.py`, `llm_model.py`).
 - **Analyse Comparative** : L'analyse des performances, avantages et limites des 3 approches (ainsi que toute l'exploration Data Science) se trouve dans le dossier `notebooks/`, particulièrement dans **`notebooks/05_comparative_analysis.ipynb`**.
 
-## 🛠️ Comment lancer l'application en local
+## 📂 Structure du Projet
+
+- `data/` : Contient le dataset brut et nettoyé.
+- `notebooks/` : Toute la phase de Data Science (EDA, entraînement MLP, tests NLP HuggingFace, requêtes LLM OpenRouter, Synthèse comparative).
+- `saved_models/` : Fichiers `.keras` (modèles), `scaler.pkl`, et `.csv` des métriques.
+- `backend/` : Code source de l'API FastAPI et de l'orchestrateur.
+- `streamlit_app/` : Code source de l'interface graphique utilisateur avec Streamlit, qui offre les onglets suivants :
+  - **Prédiction tabulaire** : Interface de test pour le modèle de Machine Learning (MLP).
+  - **Analyse des symptômes** : Interface pour extraire les symptômes depuis du texte médical (NLP Zero-Shot).
+  - **Pipeline complet** : Interface combinant la prédiction tabulaire, l'analyse NLP, et l'interprétation par LLM pour générer un rapport clinique.
+  - **Dataset** : Exploration visuelle et statistiques du dataset d'entraînement.
+
+## 📸 Aperçu de l'Application
 
 ### 1. Pipeline Complet
 ![Pipeline Complet](assets/pipeline_complet.png)
@@ -84,18 +96,6 @@ docker-compose up --build
 ```
 - Frontend Streamlit : http://localhost:8501
 - Backend FastAPI : http://localhost:8000
-
-## 📂 Structure du Projet
-
-- `data/` : Contient le dataset brut et nettoyé.
-- `notebooks/` : Toute la phase de Data Science (EDA, entraînement MLP, tests NLP HuggingFace, requêtes LLM OpenRouter, Synthèse comparative).
-- `saved_models/` : Fichiers `.keras` (modèles), `scaler.pkl`, et `.csv` des métriques.
-- `backend/` : Code source de l'API FastAPI et de l'orchestrateur.
-- `streamlit_app/` : Code source de l'interface graphique utilisateur avec Streamlit, qui offre les onglets suivants :
-  - **Prédiction tabulaire** : Interface de test pour le modèle de Machine Learning (MLP).
-  - **Analyse des symptômes** : Interface pour extraire les symptômes depuis du texte médical (NLP Zero-Shot).
-  - **Pipeline complet** : Interface combinant la prédiction tabulaire, l'analyse NLP, et l'interprétation par LLM pour générer un rapport clinique.
-  - **Dataset** : Exploration visuelle et statistiques du dataset d'entraînement.
 
 ## 🔑 Configuration (.env)
 Pour que la 3ème couche (LLM) fonctionne, vous devez posséder un fichier `.env` à la racine contenant votre clé OpenRouter :
