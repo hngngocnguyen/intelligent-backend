@@ -64,6 +64,7 @@ def inject_styles() -> None:
             --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.15);
             --glass-blur: blur(12px);
+            --accent: #2563eb;
         }
 
         @keyframes gradientBG {
@@ -180,10 +181,10 @@ def inject_styles() -> None:
         }
 
         .story-card {
-            background: var(--panel);
+            background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid rgba(255,255,255,0.4);
+            border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 1.5rem;
             box-shadow: var(--shadow-sm);
@@ -201,7 +202,7 @@ def inject_styles() -> None:
         .story-card h3 {
             margin: 0.5rem 0 0.3rem;
             font-size: 1.2rem;
-            color: #1f2937;
+            color: inherit;
         }
 
         .status-label {
@@ -223,85 +224,15 @@ def inject_styles() -> None:
             line-height: 1.5;
         }
 
-        /* Streamlit overrides */
-        .stTabs [data-baseweb="tab"] {
-            background: transparent;
-            border-radius: 12px;
-            border: 1px solid transparent;
-            padding: 0.5rem 1.2rem;
-            margin-right: 0.5rem;
-            color:inherit;opacity:0.75;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-        
-        .stTabs [data-baseweb="tab"]:hover {
-            background: rgba(255,255,255,0.5);
-            color:inherit;
-        }
-
-        .stTabs [data-baseweb="tab"][aria-selected="true"] {
-            background: #ffffff;
-            color: var(--accent);
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .stButton > button {
-            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-            color: #fff;
-            border-radius: 14px;
-            padding: 0.6rem 1.8rem;
-            border: none;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .stButton > button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
-            background: linear-gradient(135deg, #3b82f6, var(--accent));
-            border-color: transparent;
-            color: white;
-        }
-        
-        .stButton > button:active {
-            transform: translateY(1px);
-        }
-
-        /* Input styling overrides */
-        .stTextInput input,
-        .stTextArea textarea,
-        .stNumberInput input,
-        .stSelectbox div[data-baseweb="select"] > div,
-        .stSlider div[data-baseweb="slider"] {
-            border-radius: 12px;
-            border: 1px solid rgba(17, 24, 39, 0.1);
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(8px);
-            transition: all 0.2s ease;
-        }
-        
-        .stTextInput input:focus,
-        .stTextArea textarea:focus,
-        .stNumberInput input:focus,
-        .stSelectbox div[data-baseweb="select"] > div:focus-within {
-            background: #ffffff;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
-        }
-
         /* Custom metric card generic styling */
         div[data-testid="stMetric"] {
-            background: var(--panel);
+            background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
             border-radius: 16px;
             padding: 1.2rem;
-            border: 1px solid rgba(255,255,255,0.4);
-            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-md);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
