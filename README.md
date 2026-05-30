@@ -24,7 +24,19 @@ Ce projet ne se limite pas à un simple modèle de classification. Il intègre u
    - Interroge un modèle LLM gratuit (`:free`) avec failover (ex: `openai/gpt-oss-20b:free`, `mistralai/mistral-7b-instruct:free`).
    - Combine les résultats médicaux tabulaires et les symptômes NLP pour générer un compte-rendu compréhensible, empathique et renvoyer un JSON structuré exploitable par l'UI.
 
-## 📸 Aperçu de l'Application
+## 🚀 Liens du Projet
+
+- **Démonstration en ligne (HuggingFace Spaces)** : [Insérez votre lien HuggingFace ici]
+- **Dépôt du code source (GitHub)** : [Insérez votre lien GitHub ici]
+
+## 📂 Guide de navigation pour l'évaluation
+
+Pour faciliter la lecture du projet, voici où trouver les éléments clés :
+- **Interface Utilisateur (Frontend)** : Le point d'entrée principal est `streamlit_app/app.py`.
+- **API & Logique Métier (Backend)** : Le serveur FastAPI se trouve dans `backend/main.py` et les différents modèles IA sont gérés dans `backend/models/` (`classic_model.py`, `hf_model.py`, `llm_model.py`).
+- **Analyse Comparative** : L'analyse des performances, avantages et limites des 3 approches (ainsi que toute l'exploration Data Science) se trouve dans le dossier `notebooks/`, particulièrement dans **`notebooks/05_comparative_analysis.ipynb`**.
+
+## 🛠️ Comment lancer l'application en local
 
 ### 1. Pipeline Complet
 ![Pipeline Complet](assets/pipeline_complet.png)
