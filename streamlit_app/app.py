@@ -59,8 +59,8 @@ def inject_styles() -> None:
             --bg: #f4f6f9;
             --panel: rgba(255, 255, 255, 0.75);
             --panel-solid: #ffffff;
-            --ink: #111827;
-            --muted: #6b7280;
+            --ink: var(--ink);
+            --muted: var(--muted);
             --accent: #2563eb;
             --accent-hover: #1d4ed8;
             --accent-2: #ea580c;
@@ -93,7 +93,7 @@ def inject_styles() -> None:
         h1, h2, h3, h4, h5 {
             font-family: "Fraunces", serif;
             letter-spacing: -0.01em;
-            color: #111827;
+            color: var(--ink);
         }
 
         @keyframes fadeUp {
@@ -246,7 +246,7 @@ def inject_styles() -> None:
         
         .stTabs [data-baseweb="tab"]:hover {
             background: rgba(255,255,255,0.5);
-            color: #111827;
+            color: var(--ink);
         }
 
         .stTabs [data-baseweb="tab"][aria-selected="true"] {

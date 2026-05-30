@@ -32,7 +32,7 @@ def _scores_figure(scores: dict[str, float]) -> go.Figure:
         plot_bgcolor="rgba(0,0,0,0)",
         xaxis=dict(showgrid=True, gridcolor="rgba(17,24,39,0.06)", range=[0, 105]),
         yaxis=dict(showgrid=False),
-        font=dict(color="#111827", size=13, family="Manrope"),
+        font=dict(color="var(--ink)", size=13, family="Manrope"),
     )
     return fig
 
@@ -43,7 +43,7 @@ def render_symptom_page(client: ApiClient) -> None:
         <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;margin-bottom:0.3rem">
             🗣️ Analyse des Symptômes — Zero-Shot NLP
         </h2>
-        <p style="color:#5b6b74;font-size:0.92rem">
+        <p style="color:var(--muted);font-size:0.92rem">
             Décrivez les symptômes ressentis par le patient en anglais. Le modèle 
             <strong>DeBERTa (Hugging Face)</strong> classifie ces symptômes sans aucun entraînement spécifique préalable.
         </p>
@@ -115,11 +115,11 @@ def render_symptom_page(client: ApiClient) -> None:
                 <p style="margin:0.5rem 0;font-size:1.8rem;font-weight:800;color:{color}">{top_category}</p>
                 <div style="display:flex;justify-content:center;gap:1.5rem;margin-top:0.8rem">
                     <div>
-                        <span style="font-size:0.85rem;color:#6b7280;font-weight:600;">Confiance</span><br>
+                        <span style="font-size:0.85rem;color:var(--muted);font-weight:600;">Confiance</span><br>
                         <strong style="font-size:1.2rem;color:{color}">{confidence:.1%}</strong>
                     </div>
                     <div>
-                        <span style="font-size:0.85rem;color:#6b7280;font-weight:600;">Mode</span><br>
+                        <span style="font-size:0.85rem;color:var(--muted);font-weight:600;">Mode</span><br>
                         <strong style="font-size:1.2rem;color:{color}">{mode.capitalize()}</strong>
                     </div>
                 </div>
@@ -127,7 +127,7 @@ def render_symptom_page(client: ApiClient) -> None:
             """, unsafe_allow_html=True)
             
             st.markdown(
-                f'<p style="font-size:0.85rem;color:#6b7280;text-align:center">'
+                f'<p style="font-size:0.85rem;color:var(--muted);text-align:center">'
                 f'Modèle : <strong>{model_name}</strong></p>',
                 unsafe_allow_html=True,
             )
@@ -143,7 +143,7 @@ def render_symptom_page(client: ApiClient) -> None:
             st.markdown("""
             <div class="glass-card" style="padding:3rem 2rem;text-align:center;margin-top:1.5rem">
                 <p style="font-size:2.5rem;margin:0">🧠</p>
-                <p style="color:#6b7280;margin:1rem 0 0;font-size:1.05rem;line-height:1.6">
+                <p style="color:var(--muted);margin:1rem 0 0;font-size:1.05rem;line-height:1.6">
                     Sélectionnez un exemple ou décrivez les symptômes, puis cliquez sur<br>
                     <strong>Lancer l'analyse NLP</strong>.
                 </p>
