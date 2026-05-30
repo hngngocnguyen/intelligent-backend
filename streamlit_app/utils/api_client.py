@@ -8,7 +8,7 @@ import requests
 
 class ApiClient:
     def __init__(self, base_url: str | None = None) -> None:
-        default_url = "http://localhost:8000"
+        default_url = "http://127.0.0.1:8000"
         configured_url = base_url or os.getenv("BACKEND_URL", default_url)
         self.base_url = configured_url.rstrip("/")
 

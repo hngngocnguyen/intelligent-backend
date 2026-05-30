@@ -462,7 +462,7 @@ def render_sidebar(client: ApiClient, default_url: str) -> None:
 
 def main() -> None:
     inject_styles()
-    default_url = os.getenv("BACKEND_URL", "http://localhost:8000")
+    default_url = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
     init_session_defaults(default_url)
     client = ApiClient(base_url=st.session_state.get("backend_url", default_url))
     render_sidebar(client, default_url)
