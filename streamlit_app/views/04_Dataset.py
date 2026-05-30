@@ -36,7 +36,7 @@ def render_dataset_page() -> None:
         <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;margin-bottom:0.3rem">
             📊 Exploration du Dataset
         </h2>
-        <p style="color:var(--muted);font-size:0.95rem">
+        <p style="color:inherit;opacity:0.75;font-size:0.95rem">
             Aperçu des données cliniques historiques (Pima Indians Diabetes) 
             utilisées pour entraîner le <strong>modèle Deep Learning tabulaire</strong>.
         </p>

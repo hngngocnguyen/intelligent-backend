@@ -79,7 +79,7 @@ def render_tabular_page(client: ApiClient) -> None:
         <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;margin-bottom:0.3rem">
             🧬 Prédiction Tabulaire — Modèle Deep Learning
         </h2>
-        <p style="color:var(--muted);font-size:0.92rem">
+        <p style="color:inherit;opacity:0.75;font-size:0.92rem">
             Saisissez les valeurs cliniques du patient. Le modèle MLP entraîné sur le
             dataset <strong>Pima Indians Diabetes</strong> estime le risque en temps réel.
         </p>
@@ -91,7 +91,7 @@ def render_tabular_page(client: ApiClient) -> None:
     with col_left:
         model_version = st.session_state.get("tabular_model_version", "mlp_v3")
         st.markdown(
-            f'<p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.6rem">'
+            f'<p style="font-size:0.8rem;color:inherit;opacity:0.75;margin-bottom:0.6rem">'
             f'Modèle actif : <strong style="color:#0f6b6f">{model_version}</strong> — changeable dans le panneau latéral</p>',
             unsafe_allow_html=True,
         )
@@ -150,7 +150,7 @@ def render_tabular_page(client: ApiClient) -> None:
                 <p style="margin:0;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;
                            font-weight:800;color:{color}">Résultat de la prédiction</p>
                 <p style="margin:0;font-size:1.6rem;font-weight:800;color:{color}">{prediction.upper()}</p>
-                <p style="margin:0;font-size:0.9rem;color:var(--muted);font-weight:500;">
+                <p style="margin:0;font-size:0.9rem;color:inherit;opacity:0.75;font-weight:500;">
                     Probabilité : <strong>{prob:.1%}</strong> &nbsp;·&nbsp; Risque : <strong>{risk}</strong>
                     &nbsp;·&nbsp; Latence : <strong>{latency} ms</strong>
                 </p>
@@ -180,7 +180,7 @@ def render_tabular_page(client: ApiClient) -> None:
             st.markdown("""
             <div class="glass-card" style="padding:3rem 2rem;text-align:center;margin-top:1.5rem">
                 <p style="font-size:2.5rem;margin:0">🩺</p>
-                <p style="color:var(--muted);margin:1rem 0 0;font-size:1.05rem;line-height:1.6">
+                <p style="color:inherit;opacity:0.75;margin:1rem 0 0;font-size:1.05rem;line-height:1.6">
                     Remplissez le formulaire et cliquez sur<br>
                     <strong>Lancer la prédiction</strong> pour voir le score.
                 </p>

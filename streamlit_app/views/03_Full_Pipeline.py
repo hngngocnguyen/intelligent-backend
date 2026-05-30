@@ -13,7 +13,7 @@ def render_pipeline_page(client: ApiClient) -> None:
         <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;margin-bottom:0.3rem">
             ⚙️ Orchestration Multimodale (Consensus)
         </h2>
-        <p style="color:var(--muted);font-size:0.92rem">
+        <p style="color:inherit;opacity:0.75;font-size:0.92rem">
             Combine le <strong>modèle Deep Learning tabulaire</strong>, le <strong>modèle NLP Zero-Shot</strong>, et 
             l'<strong>API LLM</strong> pour générer un diagnostic final robuste par consensus.
         </p>
@@ -96,9 +96,9 @@ def render_pipeline_page(client: ApiClient) -> None:
         with col1:
             st.markdown(f"""
             <div class="glass-card" style="background:{b_classic};border:1px solid {c_classic}44;padding:1.5rem;height:100%">
-                <div style="color:var(--muted);font-size:0.75rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem">1. Modèle Classique (MLP)</div>
+                <div style="color:inherit;opacity:0.75;font-size:0.75rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem">1. Modèle Classique (MLP)</div>
                 <div style="font-size:2.2rem;font-weight:800;color:{c_classic};margin-bottom:0.2rem">{r_classic.upper()}</div>
-                <div style="font-size:0.9rem;color:var(--muted);font-weight:500;">Probabilité: <strong>{classic_level.get('probability', 0):.1%}</strong></div>
+                <div style="font-size:0.9rem;color:inherit;opacity:0.75;font-weight:500;">Probabilité: <strong>{classic_level.get('probability', 0):.1%}</strong></div>
             </div>
             """, unsafe_allow_html=True)
             
@@ -110,9 +110,9 @@ def render_pipeline_page(client: ApiClient) -> None:
         with col2:
             st.markdown(f"""
             <div class="glass-card" style="background:{b_hf};border:1px solid {c_hf}44;padding:1.5rem;height:100%">
-                <div style="color:var(--muted);font-size:0.75rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem">2. Zero-Shot NLP</div>
+                <div style="color:inherit;opacity:0.75;font-size:0.75rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem">2. Zero-Shot NLP</div>
                 <div style="font-size:1.6rem;line-height:1.2;font-weight:800;color:{c_hf};margin-bottom:0.2rem">{h_cat.title()}</div>
-                <div style="font-size:0.9rem;color:var(--muted);margin-top:0.4rem;font-weight:500;">Confiance: <strong>{hf_result.get('confidence', 0):.1%}</strong></div>
+                <div style="font-size:0.9rem;color:inherit;opacity:0.75;margin-top:0.4rem;font-weight:500;">Confiance: <strong>{hf_result.get('confidence', 0):.1%}</strong></div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -123,9 +123,9 @@ def render_pipeline_page(client: ApiClient) -> None:
         with col3:
             st.markdown(f"""
             <div class="glass-card" style="background:{b_llm};border:1px solid {c_llm}44;padding:1.5rem;height:100%">
-                <div style="color:var(--muted);font-size:0.75rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem">3. Synthèse LLM</div>
+                <div style="color:inherit;opacity:0.75;font-size:0.75rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem">3. Synthèse LLM</div>
                 <div style="font-size:2.2rem;font-weight:800;color:{c_llm};margin-bottom:0.2rem">{r_llm.upper()}</div>
-                <div style="font-size:0.9rem;color:var(--muted);font-weight:500;">Urgence: <strong>{llm_result.get('urgency', '-').upper()}</strong></div>
+                <div style="font-size:0.9rem;color:inherit;opacity:0.75;font-weight:500;">Urgence: <strong>{llm_result.get('urgency', '-').upper()}</strong></div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -138,13 +138,13 @@ def render_pipeline_page(client: ApiClient) -> None:
         st.markdown(f"""
         <div class="glass-card" style="background:{b_final};border:2px solid {c_final};padding:2rem;display:flex;align-items:center;gap:2rem">
             <div style="text-align:center;min-width:160px;border-right:1px solid {c_final}44;padding-right:2rem">
-                <p style="margin:0;font-size:0.85rem;text-transform:uppercase;font-weight:800;color:var(--muted)">Consensus Final</p>
+                <p style="margin:0;font-size:0.85rem;text-transform:uppercase;font-weight:800;color:inherit;opacity:0.75">Consensus Final</p>
                 <p style="margin:0;font-size:2.5rem;font-weight:800;color:{c_final}">{consensus.get('final_risk_level', '-').upper()}</p>
-                <p style="margin:0;font-size:0.9rem;color:var(--muted);font-weight:600;">Accord: <strong>{consensus.get('agreement', '-').replace('_', ' ')}</strong></p>
+                <p style="margin:0;font-size:0.9rem;color:inherit;opacity:0.75;font-weight:600;">Accord: <strong>{consensus.get('agreement', '-').replace('_', ' ')}</strong></p>
             </div>
             <div style="flex-grow:1">
-                <p style="margin:0;font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--ink)">Justification Croisée</p>
-                <p style="margin:0.5rem 0 0;font-size:1.05rem;color:var(--ink);line-height:1.6">{consensus.get('cross_validation', '-')}</p>
+                <p style="margin:0;font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:inherit">Justification Croisée</p>
+                <p style="margin:0.5rem 0 0;font-size:1.05rem;color:inherit;line-height:1.6">{consensus.get('cross_validation', '-')}</p>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -154,9 +154,9 @@ def render_pipeline_page(client: ApiClient) -> None:
         
         st.markdown(f"""
         <div class="glass-card" style="background:var(--panel-solid);padding:2rem">
-            <p style="color:var(--ink);font-size:1.1rem;line-height:1.7;margin-bottom:1.5rem">{llm_result.get('summary', '')}</p>
-            <p style="font-weight:800;color:var(--muted);margin-bottom:0.5rem;text-transform:uppercase;font-size:0.85rem;letter-spacing:0.05em;">Recommandations</p>
-            <ul style="color:var(--ink);margin:0;padding-left:1.5rem;font-size:1.05rem;line-height:1.6">
+            <p style="color:inherit;font-size:1.1rem;line-height:1.7;margin-bottom:1.5rem">{llm_result.get('summary', '')}</p>
+            <p style="font-weight:800;color:inherit;opacity:0.75;margin-bottom:0.5rem;text-transform:uppercase;font-size:0.85rem;letter-spacing:0.05em;">Recommandations</p>
+            <ul style="color:inherit;margin:0;padding-left:1.5rem;font-size:1.05rem;line-height:1.6">
                 {''.join(f'<li style="margin-bottom:0.5rem">{r}</li>' for r in llm_result.get('recommendations', []))}
             </ul>
         </div>
@@ -168,7 +168,7 @@ def render_pipeline_page(client: ApiClient) -> None:
         st.markdown("""
         <div class="glass-card" style="padding:4rem 2rem;text-align:center;margin-top:2.5rem">
             <p style="font-size:3rem;margin:0">⚖️</p>
-            <p style="color:var(--muted);margin:1rem 0 0;font-size:1.15rem;line-height:1.6">
+            <p style="color:inherit;opacity:0.75;margin:1rem 0 0;font-size:1.15rem;line-height:1.6">
                 Remplissez les données et cliquez sur<br>
                 <strong>Exécuter le Pipeline Complet</strong>.
             </p>

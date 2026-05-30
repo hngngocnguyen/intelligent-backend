@@ -55,30 +55,15 @@ def inject_styles() -> None:
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-        /* Explicitly define variables for Light Theme */
+        /* Theme-Agnostic Glassmorphism */
+        /* These colors use transparency to overlay beautifully on ANY background (Light or Dark) */
         :root {
-            --bg: #f4f6f9;
-            --panel: rgba(255, 255, 255, 0.85);
-            --panel-solid: #ffffff;
-            --ink: #111827;
-            --muted: #6b7280;
-            --accent: #2563eb;
-            --border: rgba(17, 24, 39, 0.08);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
-            --glass-blur: blur(16px);
-        }
-
-        /* Explicitly define variables for Dark Theme */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0e1117;
-                --panel: rgba(38, 39, 48, 0.85);
-                --panel-solid: #262730;
-                --ink: #fafafa;
-                --muted: #a0aab2;
-                --border: rgba(250, 250, 250, 0.1);
-            }
+            --glass-bg: rgba(130, 150, 180, 0.08);
+            --glass-bg-hover: rgba(130, 150, 180, 0.15);
+            --glass-border: rgba(130, 150, 180, 0.25);
+            --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.15);
+            --glass-blur: blur(12px);
         }
 
         @keyframes gradientBG {
@@ -94,7 +79,7 @@ def inject_styles() -> None:
         h1, h2, h3, h4, h5 {
             font-family: "Fraunces", serif;
             letter-spacing: -0.01em;
-            color: var(--ink);
+            /* Text color inherits natively from Streamlit */
         }
 
         @keyframes fadeUp {
@@ -110,43 +95,42 @@ def inject_styles() -> None:
 
         /* Glassmorphic generic class */
         .glass-card {
-            background: var(--panel);
+            background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--border);
+            border: 1px solid var(--glass-border);
             border-radius: 20px;
             box-shadow: var(--shadow-md);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            color: var(--ink);
+            /* Color inherits natively from Streamlit */
         }
 
         .glass-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
-            background: var(--panel-solid);
+            background: var(--glass-bg-hover);
         }
 
-        /* Apply animated gradient ONLY to the hero banner */
+        /* Theme agnostic hero banner gradient overlay */
         .hero {
-            background: linear-gradient(-45deg, var(--bg), var(--panel), var(--bg));
+            background: linear-gradient(-45deg, rgba(37,99,235,0.05), rgba(16,185,129,0.05), rgba(37,99,235,0.05));
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--border);
+            border: 1px solid var(--glass-border);
             border-radius: 24px;
             padding: 2.5rem 2.5rem;
             box-shadow: var(--shadow-md);
             animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
             margin-bottom: 1.5rem;
             transition: transform 0.3s ease;
-            color: var(--ink);
         }
         
         .hero:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
-            background: var(--panel-solid);
+            background: linear-gradient(-45deg, rgba(37,99,235,0.1), rgba(16,185,129,0.1), rgba(37,99,235,0.1));
         }
 
         .hero h1 {
@@ -159,7 +143,7 @@ def inject_styles() -> None:
         }
 
         .hero p {
-            color: var(--muted);
+            color:inherit;opacity:0.75;
             margin-bottom: 0;
             font-size: 1.1rem;
             line-height: 1.6;
@@ -189,7 +173,7 @@ def inject_styles() -> None:
             margin: 2rem 0 1rem;
             font-size: 1.4rem;
             font-weight: 700;
-            color: var(--ink);
+            color:inherit;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -234,7 +218,7 @@ def inject_styles() -> None:
 
         .story-card p {
             margin: 0;
-            color: var(--muted);
+            color:inherit;opacity:0.75;
             font-size: 0.95rem;
             line-height: 1.5;
         }
@@ -246,14 +230,14 @@ def inject_styles() -> None:
             border: 1px solid transparent;
             padding: 0.5rem 1.2rem;
             margin-right: 0.5rem;
-            color: var(--muted);
+            color:inherit;opacity:0.75;
             font-weight: 600;
             transition: all 0.2s ease;
         }
         
         .stTabs [data-baseweb="tab"]:hover {
             background: rgba(255,255,255,0.5);
-            color: var(--ink);
+            color:inherit;
         }
 
         .stTabs [data-baseweb="tab"][aria-selected="true"] {
