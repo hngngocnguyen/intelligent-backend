@@ -78,44 +78,10 @@ class HuggingFaceSymptomService:
         request: SymptomAnalysisRequest,
         classic_probability: float | None = None,
     ) -> SymptomAnalysisResponse:
-        pipeline_instance = self._try_load_pipeline()
+        # BYPASS Hugging Face transformers completely due to memory/CPU limitations
+        # on the free tier of Hugging Face Spaces. Always use the reliable fallback.
         labels = request.candidate_labels or DEFAULT_LABELS
 
-        if pipeline_instance is not None:
-            try:
-                result = pipeline_instance(
-                    request.symptoms_text,
-                    candidate_labels=labels,
-                    multi_label=False,
-                )
-                scores = dict(
-                    zip(result["labels"], result["scores"], strict=False)
-                )
-                ordered_scores = normalize_scores(scores)
-                top_label = max(ordered_scores, key=ordered_scores.get)
-                confidence = float(ordered_scores[top_label])
-                return SymptomAnalysisResponse(
-                    model=self.model_name,
-                    top_category=top_label,
-                    confidence=round(confidence, 4),
-                    all_scores={
-                        label: round(score, 4)
-                        for label, score in ordered_scores.items()
-                    },
-                    top_categories=self._top_scores(ordered_scores),
-                    symptom_matches_prediction=self._symptom_match(
-                        request.symptoms_text,
-                        top_label,
-                        classic_probability,
-                    ),
-                    inference_time_ms=420,
-                    mode="hf",
-                )
-            except Exception as exc:  # pragma: no cover
-                logger.warning(
-                    "HF inference failed, using fallback analysis: %s",
-                    exc,
-                )
 
         fallback_scores = self._fallback_scores(request.symptoms_text, labels)
         top_label = max(fallback_scores, key=fallback_scores.get)

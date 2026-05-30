@@ -151,7 +151,7 @@ class OpenRouterExplanationService:
                         self.base_url,
                         headers=headers,
                         json={"model": model_name, **body_template},
-                        timeout=60,
+                        timeout=10,
                     )
                     if response.ok:
                         data = response.json()
