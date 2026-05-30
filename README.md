@@ -1,11 +1,3 @@
----
-title: Diabete Risk Predictor
-emoji: 🩺
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-pinned: false
----
 # Intelligent Backend — Diabetes Risk Predictor
 
 Une application full-stack intelligente (FastAPI + Streamlit) combinant trois couches d'Intelligence Artificielle pour analyser le risque de diabète chez un patient. Ce projet a été développé en respectant la méthodologie **CRISP-DM**.
@@ -24,15 +16,29 @@ Ce projet ne se limite pas à un simple modèle de classification. Il intègre u
    - Interroge un modèle LLM gratuit (`:free`) avec failover (ex: `openai/gpt-oss-20b:free`, `mistralai/mistral-7b-instruct:free`).
    - Combine les résultats médicaux tabulaires et les symptômes NLP pour générer un compte-rendu compréhensible, empathique et renvoyer un JSON structuré exploitable par l'UI.
 
+## 📸 Aperçu de l'Application
+
+### 1. Pipeline Complet
+![Pipeline Complet](assets/pipeline_complet.png)
+
+### 2. Prédiction Tabulaire
+![Prédiction Tabulaire](assets/prediction_tabulaire.png)
+
+### 3. Analyse des Symptômes NLP
+![Analyse NLP](assets/analyse_nlp.png)
+
+### 4. Exploration du Dataset
+![Exploration Dataset](assets/dataset_eda.png)
+
 ## 🚀 Comment lancer l'application en local
 
-Vous devez ouvrir **deux terminaux distincts** à l'intérieur du dossier `intelligent-backend`.
+Vous devez ouvrir **deux terminaux distincts** à l'intérieur du dossier du projet.
 
 ### 1. Démarrer le Backend (API FastAPI)
 Dans le 1er terminal :
 ```bash
-# S'assurer d'être dans le dossier du projet
-cd intelligent-backend
+# S'assurer d'être dans le dossier du projet (ex: diabete-risk-predictor)
+# cd diabete-risk-predictor
 
 # Lancer le serveur (il tournera sur http://127.0.0.1:8000)
 python -m uvicorn backend.main:app --reload --port 8000
@@ -44,7 +50,7 @@ Le backend va charger les modèles TensorFlow et HuggingFace en mémoire. Une fo
 Dans le 2ème terminal :
 ```bash
 # S'assurer d'être dans le dossier du projet
-cd intelligent-backend
+# cd diabete-risk-predictor
 
 # Lancer l'interface web (elle s'ouvrira sur http://127.0.0.1:8501)
 streamlit run streamlit_app/app.py
