@@ -55,27 +55,30 @@ def inject_styles() -> None:
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-        /* Map our custom variables directly to Streamlit's native theme engine within .stApp to ensure correct scoping */
-        .stApp {
-            --bg: var(--background-color, #f4f6f9);
-            --panel: var(--secondary-background-color, rgba(255, 255, 255, 0.75));
-            --panel-solid: var(--secondary-background-color, #ffffff);
-            --ink: var(--text-color, #111827);
-            --muted: var(--text-color, #6b7280); /* Ensure high contrast */
-            --accent: var(--primary-color, #2563eb);
-            --accent-hover: #1d4ed8;
-            --accent-2: #ea580c;
-            --accent-3: #059669;
-            --border: rgba(128, 128, 128, 0.2);
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        /* Explicitly define variables for Light Theme */
+        :root {
+            --bg: #f4f6f9;
+            --panel: rgba(255, 255, 255, 0.85);
+            --panel-solid: #ffffff;
+            --ink: #111827;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --border: rgba(17, 24, 39, 0.08);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
             --glass-blur: blur(16px);
-            
-            background: linear-gradient(-45deg, var(--bg), var(--panel), var(--bg)) !important;
-            background-size: 400% 400% !important;
-            animation: gradientBG 15s ease infinite !important;
-            color: var(--ink) !important;
+        }
+
+        /* Explicitly define variables for Dark Theme */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0e1117;
+                --panel: rgba(38, 39, 48, 0.85);
+                --panel-solid: #262730;
+                --ink: #fafafa;
+                --muted: #a0aab2;
+                --border: rgba(250, 250, 250, 0.1);
+            }
         }
 
         @keyframes gradientBG {
@@ -114,6 +117,7 @@ def inject_styles() -> None:
             border-radius: 20px;
             box-shadow: var(--shadow-md);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--ink);
         }
 
         .glass-card:hover {
@@ -122,8 +126,11 @@ def inject_styles() -> None:
             background: var(--panel-solid);
         }
 
+        /* Apply animated gradient ONLY to the hero banner */
         .hero {
-            background: var(--panel);
+            background: linear-gradient(-45deg, var(--bg), var(--panel), var(--bg));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
             border: 1px solid var(--border);
@@ -133,6 +140,7 @@ def inject_styles() -> None:
             animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
             margin-bottom: 1.5rem;
             transition: transform 0.3s ease;
+            color: var(--ink);
         }
         
         .hero:hover {
