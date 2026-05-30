@@ -55,8 +55,8 @@ def inject_styles() -> None:
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-        :root {
-            /* Map our custom variables directly to Streamlit's native theme engine */
+        /* Map our custom variables directly to Streamlit's native theme engine within .stApp to ensure correct scoping */
+        .stApp {
             --bg: var(--background-color, #f4f6f9);
             --panel: var(--secondary-background-color, rgba(255, 255, 255, 0.75));
             --panel-solid: var(--secondary-background-color, #ffffff);
@@ -71,14 +71,11 @@ def inject_styles() -> None:
             --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
             --glass-blur: blur(16px);
-        }
-
-        /* Animated gradient background */
-        .stApp {
-            background: linear-gradient(-45deg, var(--bg), var(--panel), var(--bg));
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: var(--ink);
+            
+            background: linear-gradient(-45deg, var(--bg), var(--panel), var(--bg)) !important;
+            background-size: 400% 400% !important;
+            animation: gradientBG 15s ease infinite !important;
+            color: var(--ink) !important;
         }
 
         @keyframes gradientBG {
@@ -113,7 +110,7 @@ def inject_styles() -> None:
             background: var(--panel);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid rgba(255,255,255,0.4);
+            border: 1px solid var(--border);
             border-radius: 20px;
             box-shadow: var(--shadow-md);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -122,14 +119,14 @@ def inject_styles() -> None:
         .glass-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
-            background: rgba(255, 255, 255, 0.85);
+            background: var(--panel-solid);
         }
 
         .hero {
             background: var(--panel);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--border);
             border-radius: 24px;
             padding: 2.5rem 2.5rem;
             box-shadow: var(--shadow-md);
@@ -141,6 +138,7 @@ def inject_styles() -> None:
         .hero:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
+            background: var(--panel-solid);
         }
 
         .hero h1 {
