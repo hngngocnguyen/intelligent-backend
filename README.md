@@ -26,8 +26,8 @@ Ce projet ne se limite pas à un simple modèle de classification. Il intègre u
 
 ## 🚀 Liens du Projet
 
-- **Démonstration en ligne (HuggingFace Spaces)** : [Insérez votre lien HuggingFace ici]
-- **Dépôt du code source (GitHub)** : [Insérez votre lien GitHub ici]
+- **Démonstration en ligne (HuggingFace Spaces)** : [https://huggingface.co/spaces/theamazingruby/diabete-risk-predictor](https://huggingface.co/spaces/theamazingruby/diabete-risk-predictor)
+- **Dépôt du code source (GitHub)** : [https://github.com/hngngocnguyen/intelligent-backend](https://github.com/hngngocnguyen/intelligent-backend)
 
 ## 📂 Guide de navigation pour l'évaluation
 
