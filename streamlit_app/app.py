@@ -56,16 +56,17 @@ def inject_styles() -> None:
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
         :root {
-            --bg: #f4f6f9;
-            --panel: rgba(255, 255, 255, 0.75);
-            --panel-solid: #ffffff;
-            --ink: var(--ink);
-            --muted: var(--muted);
-            --accent: #2563eb;
+            /* Map our custom variables directly to Streamlit's native theme engine */
+            --bg: var(--background-color, #f4f6f9);
+            --panel: var(--secondary-background-color, rgba(255, 255, 255, 0.75));
+            --panel-solid: var(--secondary-background-color, #ffffff);
+            --ink: var(--text-color, #111827);
+            --muted: var(--text-color, #6b7280); /* Ensure high contrast */
+            --accent: var(--primary-color, #2563eb);
             --accent-hover: #1d4ed8;
             --accent-2: #ea580c;
             --accent-3: #059669;
-            --border: rgba(17, 24, 39, 0.08);
+            --border: rgba(128, 128, 128, 0.2);
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
@@ -74,7 +75,7 @@ def inject_styles() -> None:
 
         /* Animated gradient background */
         .stApp {
-            background: linear-gradient(-45deg, #f3f4f6, #e5e7eb, #f9fafb, #f3f4f6);
+            background: linear-gradient(-45deg, var(--bg), var(--panel), var(--bg));
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             color: var(--ink);
